@@ -51,12 +51,11 @@ class RandomWordsState extends State<RandomWords> {
           children: <Widget>[
             new DrawerHeader(
               child: new Text('Drawer Header'),
-              decoration: new BoxDecoration(
-                color: Colors.blue,
-              ),
+              decoration:
+                  new BoxDecoration(color: Theme.of(context).accentColor),
             ),
             new ListTile(
-              title: new Text('Item 1'),
+              title: new Text('Chat Screen'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -65,7 +64,7 @@ class RandomWordsState extends State<RandomWords> {
               },
             ),
             new ListTile(
-              title: new Text('Item 2'),
+              title: new Text('List Screen'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -174,15 +173,45 @@ class SecondScreenState extends State<SecondScreen>
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text('Friends Chat'),
-          elevation: Theme.of(context).platform == TargetPlatform.iOS
-              ? 0.0
-              : 4.0, //new
-          actions: <Widget>[
-            new IconButton(icon: new Icon(Icons.thumb_up)),
-            new IconButton(icon: new Icon(Icons.chat))
+        title: new Text('Friends Chat'),
+        elevation:
+            Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0, //new
+        // automaticallyImplyLeading: false
+      ),
+      drawer: new Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the Drawer if there isn't enough vertical
+        // space to fit everything.
+        child: new ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            new DrawerHeader(
+              child: new Text('Drawer Header'),
+              decoration:
+                  new BoxDecoration(color: Theme.of(context).accentColor),
+            ),
+            new ListTile(
+              title: new Text('Chat Screen'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            new ListTile(
+              title: new Text('List Screen'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
           ],
-          automaticallyImplyLeading: false),
+        ),
+      ),
       body: new Container(
           //modified
           child: new Column(
@@ -344,5 +373,5 @@ final ThemeData kIOSTheme = new ThemeData(
 
 final ThemeData kDefaultTheme = new ThemeData(
   primarySwatch: Colors.purple,
-  accentColor: Colors.orangeAccent[400],
+  accentColor: Colors.purple,
 );
