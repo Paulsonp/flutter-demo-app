@@ -1,6 +1,9 @@
 # flutter-demo-app
 
 This is an Cross Platform Mobile Application Using Flutter provided by Google
+
+## Sections
+
 SIDE DRAWER, LISTING, ROUTING, DEMO CHAT SECTION
 
 ## Getting Started
