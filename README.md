@@ -1,6 +1,6 @@
-# first_demo_app
+# flutter-demo-app
 
-A new Flutter project.
+This is an Cross Platform Mobile Application Using Flutter provided by Google
 
 ## Getting Started
 
